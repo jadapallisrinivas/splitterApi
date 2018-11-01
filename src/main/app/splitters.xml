@@ -17,5 +17,6 @@ http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/
         <collection-aggregator failOnTimeout="true" doc:name="Collection Aggregator"/>
         <mulexml:dom-to-xml-transformer doc:name="DOM to XML"/>
         <file:outbound-endpoint path="C:\Users\SRINIVAS\Desktop\mule\outbound" responseTimeout="10000" doc:name="File"/>
+        <logger message="Successfully created files in destination folder" level="INFO" doc:name="Logger"/>
     </flow>
 </mule>
