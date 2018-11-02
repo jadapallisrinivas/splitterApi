@@ -11,7 +11,6 @@ http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/
     <http:listener-config name="HTTP_Listener_Configuration" host="localhost" port="8081" doc:name="HTTP Listener Configuration"/>
     <flow name="splittersFlow">
         <http:listener config-ref="HTTP_Listener_Configuration" path="/splitter" doc:name="HTTP"/>
-        <logger message="capture the input data:#[payload]" level="INFO" doc:name="Logger"/>
         <splitter expression="#[xpath3('//productsList/product', message.payload, 'NODESET')]" doc:name="Splitter"/>
         <mulexml:dom-to-xml-transformer doc:name="DOM to XML"/>
         <collection-aggregator failOnTimeout="true" doc:name="Collection Aggregator"/>
